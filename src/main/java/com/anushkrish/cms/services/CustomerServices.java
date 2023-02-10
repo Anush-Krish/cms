@@ -33,28 +33,15 @@ public class CustomerServices {
     }
 
     public Customer updateCustomer(int customerId, Customer customer) {
-        CustomerList
-                .stream()
-                .forEach(c -> {
-                    if (c.getCustomerId() == customerId) {
-                        c.setCustomerFirstName(customer.getCustomerFirstName());
-                        c.setCustomerLastName(customer.getCustomerLastName());
-                        c.setCustomerEmail(customer.getCustomerEmail());
-                    }
-
-                });
-        return CustomerList
-                .stream()
-                .filter(c -> c.getCustomerId() == customerId)
-                .findFirst()
-                .get();
-
+//
+    customer.setCustomerId(customerId);
+    return customerDAO.save(customer);
 
     }
 
     public void deleteCustomer(int customerId) {
 //
-        deleteCustomer(customerId);
+        customerDAO.deleteById(customerId);
     }
 
 }
