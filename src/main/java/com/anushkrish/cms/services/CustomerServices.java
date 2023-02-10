@@ -28,11 +28,8 @@ public class CustomerServices {
 
 
     public Customer getCustomer(int customerId) {
-        return CustomerList
-                .stream()    //stream is used for operations in which original data structure is not affected.one stream can be used only once.
-                .filter(c -> c.getCustomerId() == customerId)
-                .findFirst()
-                .get();
+//
+         return customerDAO.findById(customerId).get();
     }
 
     public Customer updateCustomer(int customerId, Customer customer) {
@@ -56,13 +53,8 @@ public class CustomerServices {
     }
 
     public void deleteCustomer(int customerId) {
-        CustomerList
-                .stream()
-                .forEach(c -> {
-                    if (c.getCustomerId() == customerId) {
-                        CustomerList.remove(c);
-                    }
-                });
+//
+        deleteCustomer(customerId);
     }
 
 }

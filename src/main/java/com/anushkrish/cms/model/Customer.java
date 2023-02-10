@@ -14,7 +14,7 @@ public class Customer {
    // @JsonProperty("lastName")
     private String customerLastName;
    //@JsonProperty("customerEmail")
-   @Column(name="customerEmail")
+   //@Column(name="customerEmail")
 
    private String customerEmail;
 
