@@ -28,6 +28,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .password("password")
                 .roles("USER","ADMIN")
                 .build();
-        return new InMemoryUserDetailsManager(user1,user2);
+        UserDetails user3=userBuilder
+                .username("myuser3")
+                .password("password")
+                .roles("USER","ADMIN")
+                .build();
+        return new InMemoryUserDetailsManager(user1,user2,user3);
     }
 }
